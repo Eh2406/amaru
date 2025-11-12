@@ -56,7 +56,8 @@ reqwest = { version = "0.12.20", default-features = false, features = ["json", "
 rocksdb = { version = "0.24.0", default-features = false, features = [
   "bindgen-runtime",
   "snappy",
-  "multi-threaded-cf"
+  "multi-threaded-cf",
+  "jemalloc"
 ] }
 rustversion = "1.0.22"
 serde = { version = "1.0.228", default-features = false }
