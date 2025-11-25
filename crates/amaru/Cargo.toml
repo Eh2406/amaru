@@ -44,6 +44,7 @@ tokio-util.workspace = true
 tracing-opentelemetry.workspace = true
 tracing-subscriber.workspace = true
 tracing.workspace = true
+tikv-jemallocator = { workspace = true, optional = true }
 
 # Internal dependencies ───────────────────────────────────────────────────────┐
 amaru-consensus = { workspace = true, features = [] }
@@ -76,3 +77,6 @@ amaru-kernel = { workspace = true, features = ["test-utils"] }
 [build-dependencies]
 built = { workspace = true, features = ["git2"] }
 amaru-kernel.workspace = true
+
+[features]
+jemalloc = ["dep:tikv-jemallocator", "rocksdb/jemalloc"]

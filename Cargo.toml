@@ -32,6 +32,7 @@ hex = "0.4.3"
 indicatif = "0.18.0"
 indoc = "2.0"
 itertools = "0.14.0"
+tikv-jemallocator = { version = "0.6.1", features = ["profiling"] }
 minicbor = { version = "0.25.1", features = ["std", "half", "derive"] } # Must match the version used by pallas
 num = { version = "0.4.3", default-features = false, features = ["alloc"] }
 opentelemetry = "0.31.0"
@@ -55,7 +56,7 @@ reqwest = { version = "0.12.20", default-features = false, features = ["json", "
 rocksdb = { version = "0.24.0", default-features = false, features = [
   "bindgen-runtime",
   "snappy",
-  "multi-threaded-cf"
+  "multi-threaded-cf",
 ] }
 rustversion = "1.0.22"
 serde = { version = "1.0.228", default-features = false }
