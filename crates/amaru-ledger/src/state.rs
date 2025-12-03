@@ -421,6 +421,13 @@ impl<S: Store, HS: HistoricalStores> State<S, HS> {
         }?;
         batch.commit()?;
 
+        if let Ok(v) = std::env::var("INGEST_MAXIMUM_EPOCH")
+            && let Ok(m) = v.parse::<u64>()
+            && next_epoch >= m.into()
+        {
+            panic!("ending fast at epoch {m}")
+        }
+
         Ok(protocol_parameters)
     }
 
