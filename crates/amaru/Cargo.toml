@@ -45,6 +45,7 @@ tracing-opentelemetry.workspace = true
 tracing-subscriber.workspace = true
 tracing.workspace = true
 tikv-jemallocator = { workspace = true, optional = true }
+mimalloc = {version = "0.1.48", optional = true }
 
 # Internal dependencies ───────────────────────────────────────────────────────┐
 amaru-consensus = { workspace = true, features = [] }
