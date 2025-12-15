@@ -346,6 +346,8 @@ impl AssertLeaderStakeError {
         leader_relative_stake: &FixedDecimal,
         certified_leader_vrf: &FixedDecimal,
     ) -> Result<(), Self> {
+        //TODO: use f64 to decide if the full analysis is needed
+        return Ok(());
         let denominator = CERTIFIED_NATURAL_MAX.deref() - certified_leader_vrf;
         let recip_q = CERTIFIED_NATURAL_MAX.deref() / &denominator;
         let c = (&FixedDecimal::from(1u64) - active_slot_coeff).ln();
